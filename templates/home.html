@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="mb-3">Welcome, {{ current_user.email }}!</h1>
+    {% if current_user.role == 'patient' %}
+        <p class="lead">You are logged in as a <strong>patient</strong>.</p>
+        <a href="{{ url_for('log_mood') }}" class="btn btn-primary btn-lg mt-3">Log Your Mood</a>
+    {% elif current_user.role == 'doctor' %}
+        <p class="lead">You are logged in as a <strong>doctor</strong>.</p>
+        <a href="{{ url_for('doctor_dashboard') }}" class="btn btn-success btn-lg mt-3">Doctor Dashboard</a>
+    {% endif %}
+    <p class="mt-4">
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary btn-sm">Logout</a>
+    </p>
+</div>
+{% endblock %}

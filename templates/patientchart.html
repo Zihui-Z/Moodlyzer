@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4 text-center">Patient Mood Trend</h2>
+
+    <div class="card shadow-sm mb-4 p-4">
+        <h4 class="mb-3 text-primary">Patient Email: {{ patient.email }}</h4>
+        <div class="text-center">
+            <img src="data:image/png;base64,{{ chart_data }}" class="img-fluid" alt="Mood Trend Chart">
+        </div>
+    </div>
+
+    {% if ai_summary %}
+    <div class="card shadow-sm p-4 mb-4">
+        <h5 class="text-success">AI Generated Summary:</h5>
+        <p>{{ ai_summary }}</p>
+    </div>
+    {% endif %}
+
+    <div class="text-center">
+        <a href="{{ url_for('doctor_dashboard') }}" class="btn btn-outline-secondary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}
