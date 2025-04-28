@@ -8,7 +8,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import google.generativeai as genai
 
 #Gemini Key
-genai.configure(api_key="AIzaSyAav00BY2N0plqBqz05CW9sWijhEuPMSo8")
+genai.configure(api_key="your key")
 
 
 def generate_response(prompt):
