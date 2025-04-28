@@ -154,7 +154,7 @@ def view_patient(user_id):
 
     # AI summary
     if mood_logs:
-        text_snippets = [log.text_entry for log in mood_logs[-7:]]  # 取最近7条（最多一周）
+        text_snippets = [log.text_entry for log in mood_logs[-7:]]  
         combined_text = "\n".join(text_snippets)
 
         prompt = (
